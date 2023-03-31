@@ -1,3 +1,5 @@
+[![Rust](https://github.com/stanionascu/web-benchmark/actions/workflows/rust.yml/badge.svg)](https://github.com/stanionascu/web-benchmark/actions/workflows/rust.yml)
+
 # About
 
 This web benchmark suite focuses on a realistic SSR use-case, when the data is read
