@@ -8,6 +8,17 @@ Only first 100 records are fetched from the Sakila Sample Dataset - film table.
 Frontend html uses PicoCSS, which is served from CDN. There might be some minor differences inside
 the templates, due to different templating languages. But the rendered output must be identical.
 
+# Results
+
+All tests are running with Oha for 30 seconds:
+```
+$ oha -z30s http://machine:3000/?name=Oha
+```
+
+| Implementation         | Result                  |
+| ---------------------- | ----------------------- |
+| rust-axum-askama-sqlx  | 4321.3984 rps           |
+
 ## Current implementations:
 ### Rust: axum + sqlite via sqlx + askama
 ```
