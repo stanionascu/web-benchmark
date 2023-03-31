@@ -17,9 +17,10 @@ All tests are running with Oha for 30 seconds:
 $ oha -z30s http://machine:3000/?name=Oha
 ```
 
-| Implementation         | Result                  |
-| ---------------------- | ----------------------- |
-| rust-axum-askama-sqlx  | 4321.3984 rps           |
+| Implementation                 | Result                  |
+| ------------------------------ | ----------------------- |
+| rust-axum-askama-sqlx          | 4321.3984 rps           |
+| python-uvicorn-fastapi-sqlite  | 5688.1239 rps           |
 
 ## Current implementations:
 ### Rust: axum + sqlite via sqlx + askama
@@ -56,5 +57,5 @@ Client is connected to the server with a 1GBps connection via switch in a homela
 - [ ] - Bun
 - [ ] - Deno
 - [ ] - Node
-- [ ] - Python
+- [X] - Python
 - [ ] - Common chart plotting all versions
