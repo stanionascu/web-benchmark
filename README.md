@@ -35,11 +35,12 @@ Client is connected to the server with a 1GBps connection via switch in a homela
 
 # WIP
 
-[ ] - Add CPU/Memory usage plot per implementation
-[ ] - Golang
-[ ] - C++
-[ ] - Bun
-[ ] - Deno
-[ ] - Node
-[ ] - Python
-[ ] - Common chart plotting all versions
+- [ ] - Add CPU/Memory usage plot per implementation
+- [X] - Rust
+- [ ] - Golang
+- [ ] - C++
+- [ ] - Bun
+- [ ] - Deno
+- [ ] - Node
+- [ ] - Python
+- [ ] - Common chart plotting all versions
