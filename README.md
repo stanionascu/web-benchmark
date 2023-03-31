@@ -40,6 +40,7 @@ sqlite> .exit
 # Test setup
 
 Client machine: Ryzen 5900X / RAM 32GB
+
 Server machine: Intel i3-8100T / RAM 12GB
 
 Client is connected to the server with a 1GBps connection via switch in a homelab setup.
