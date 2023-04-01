@@ -1,4 +1,5 @@
 [![Rust](https://github.com/stanionascu/web-benchmark/actions/workflows/rust.yml/badge.svg)](https://github.com/stanionascu/web-benchmark/actions/workflows/rust.yml)
+[![Go](https://github.com/stanionascu/web-benchmark/actions/workflows/go.yml/badge.svg)](https://github.com/stanionascu/web-benchmark/actions/workflows/go.yml)
 
 # About
 
@@ -58,7 +59,7 @@ Client is connected to the server with a 1GBps connection via switch in a homela
 
 - [ ] - Add CPU/Memory usage plot per implementation
 - [X] - Rust
-- [ ] - Golang
+- [X] - Golang
 - [ ] - C++
 - [ ] - Bun
 - [ ] - Deno
