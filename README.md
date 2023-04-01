@@ -36,6 +36,26 @@ cd rust-axum-askama-sqlite/
 cargo run --release
 ```
 
+### Rust: axum + sqlite via rusqlite + askama
+```
+cd rust-axum-askama-rusqlite/
+cargo run --release
+```
+
+### Python: uvicorn + fastapi + sqlite
+```
+cd python-uvicorn-fastapi-sqlite/
+pip -r requirements.txt
+uvicorn serve:app --port 3000 --host '::' --workers 4 --log-level critical
+```
+
+### Go: go-gin + sqlite3
+```
+cd go-gin-sqlite/
+GIN_MODE=release go run main.go
+```
+
+
 # Creating the test SQLite database
 
 To create the test SQLite database in the root folder:
