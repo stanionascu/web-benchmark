@@ -3,8 +3,11 @@ import sqlite3
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.gzip import GZipMiddleware
 
 app = FastAPI()
+app.add_middleware(GZipMiddleware, minimum_size=100)
+
 templates = Jinja2Templates(directory="templates")
 conn = sqlite3.connect("../db.sqlite3")
 cursor = conn.cursor()
