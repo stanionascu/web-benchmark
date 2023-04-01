@@ -16,5 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build
+    - name: Build rust-axum-askama-sqlx
       run: (cd rust-axum-askama-sqlx && cargo build --verbose)
+    - name: Build rust-axum-askama-rusqlite
+      run: (cd rust-axum-askama-rusqlite && cargo build --verbose)
