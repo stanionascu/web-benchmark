@@ -10,17 +10,22 @@ Only first 100 records are fetched from the Sakila Sample Dataset - film table.
 Frontend html uses PicoCSS, which is served from CDN. There might be some minor differences inside
 the templates, due to different templating languages. But the rendered output must be identical.
 
+### Update:
+* Compression is enabled as the payload * rps was exceed the 1Gbps link capacity.
+* Number of connections from Oha, increased to 5000
+
 # Results
 
-All tests are running with Oha for 30 seconds:
+All tests are running with Oha for 30 seconds, and 5000 connections:
 ```
-$ oha -z30s http://machine:3000/?name=Oha
+$ oha -z30s -c5000 http://machine:3000/?name=Oha
 ```
 
-| Implementation                 | Result                  |
-| ------------------------------ | ----------------------- |
-| rust-axum-askama-sqlx          | 4321.3984 rps           |
-| python-uvicorn-fastapi-sqlite  | 5688.1239 rps           |
+| Implementation                 | Result                  | Throughput              |
+| ------------------------------ | ----------------------- | ----------------------- |
+| rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              |
+| python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              |
+| rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             |
 
 ## Current implementations:
 ### Rust: axum + sqlite via sqlx + askama
