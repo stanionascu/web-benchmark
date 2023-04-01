@@ -23,6 +23,7 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 
 | Implementation                 | Result                  | Throughput              |
 | ------------------------------ | ----------------------- | ----------------------- |
+| go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB                |
 | rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              |
 | python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              |
 | rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             |
