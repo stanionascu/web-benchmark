@@ -1,5 +1,5 @@
 [package]
-name = "axum-askama-sqlite-benchmark"
+name = "axum-askama-sqlx-benchmark"
 version = "0.1.0"
 edition = "2021"
 
@@ -12,3 +12,5 @@ axum = "0.6.12"
 serde = { version = "1.0.159", features = ["derive"] }
 sqlx = { version = "0.6.3", features = ["sqlite", "runtime-tokio-rustls"] }
 tokio = { version = "1.27.0", features = ["full"] }
+tower = { version = "0.4.13", features = ["tokio"] }
+tower-http = { version = "0.4.0", features = ["compression-gzip", "map-response-body", "util"] }

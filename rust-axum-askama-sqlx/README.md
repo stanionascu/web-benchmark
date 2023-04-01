@@ -7,45 +7,45 @@ rustc 1.68.2 (9eb3afe9e 2023-03-27)
 ```
 
 ```
-$ oha -z30s http://machine:3000/?name=Oha
+$ oha -z30s -c5000 http://machine:3000/?name=Oha
 Summary:
   Success rate: 1.0000
-  Total:        30.0002 secs
-  Slowest:      0.0777 secs
-  Fastest:      0.0008 secs
-  Average:      0.0116 secs
-  Requests/sec: 4321.3984
+  Total:        30.0019 secs
+  Slowest:      4.6723 secs
+  Fastest:      0.0351 secs
+  Average:      1.5003 secs
+  Requests/sec: 3227.3343
 
-  Total data:   2.12 GiB
-  Size/request: 17.15 KiB
-  Size/sec:     72.38 MiB
+  Total data:   165.75 MiB
+  Size/request: 1.75 KiB
+  Size/sec:     5.52 MiB
 
 Response time histogram:
-  0.001 [1]     |
-  0.008 [22462] |■■■■■■■
-  0.016 [93023] |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-  0.024 [13016] |■■■■
-  0.032 [1002]  |
-  0.039 [105]   |
-  0.047 [16]    |
-  0.055 [5]     |
-  0.062 [6]     |
-  0.070 [4]     |
-  0.078 [3]     |
+  0.035 [1]     |
+  0.499 [1807]  |
+  0.963 [4075]  |■
+  1.426 [1197]  |
+  1.890 [87631] |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  2.354 [1384]  |
+  2.817 [463]   |
+  3.281 [42]    |
+  3.745 [0]     |
+  4.209 [0]     |
+  4.672 [226]   |
 
 Latency distribution:
-  10% in 0.0069 secs
-  25% in 0.0095 secs
-  50% in 0.0111 secs
-  75% in 0.0135 secs
-  90% in 0.0165 secs
-  95% in 0.0187 secs
-  99% in 0.0235 secs
+  10% in 1.4699 secs
+  25% in 1.5099 secs
+  50% in 1.5302 secs
+  75% in 1.5599 secs
+  90% in 1.5805 secs
+  95% in 1.6000 secs
+  99% in 2.2891 secs
 
 Details (average, fastest, slowest):
-  DNS+dialup:   0.0312 secs, 0.0026 secs, 0.0611 secs
-  DNS-lookup:   0.0308 secs, 0.0020 secs, 0.0610 secs
+  DNS+dialup:   0.6364 secs, 0.0006 secs, 3.1568 secs
+  DNS-lookup:   0.0000 secs, 0.0000 secs, 0.0005 secs
 
 Status code distribution:
-  [200] 129643 responses
+  [200] 96826 responses
 ```

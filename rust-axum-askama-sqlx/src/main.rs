@@ -5,7 +5,12 @@ use axum::{
     Router,
 };
 use serde::Deserialize;
-use sqlx::{sqlite::SqliteRow, Row, SqlitePool};
+use sqlx::{
+    sqlite::{SqlitePoolOptions, SqliteRow},
+    Row, SqlitePool,
+};
+use tower::ServiceBuilder;
+use tower_http::{compression::CompressionLayer, ServiceBuilderExt};
 
 #[derive(Template)]
 #[template(path = "index.html")]
@@ -32,9 +37,20 @@ struct AppState {
 #[tokio::main]
 async fn main() {
     let state = AppState {
-        db: SqlitePool::connect("sqlite:../db.sqlite3").await.unwrap(),
+        db: SqlitePoolOptions::new()
+            .connect("sqlite:../db.sqlite3")
+            .await
+            .unwrap(),
     };
-    let app = Router::new().route("/", get(handler)).with_state(state);
+    let middleware = ServiceBuilder::new()
+        .layer(CompressionLayer::new())
+        .map_response_body(axum::body::boxed)
+        .compression();
+
+    let app = Router::new()
+        .route("/", get(handler))
+        .layer(middleware)
+        .with_state(state);
     let addr = "[::]:3000".parse::<std::net::SocketAddr>().unwrap();
 
     axum::Server::bind(&addr)
@@ -52,7 +68,8 @@ async fn handler(Query(params): Query<Params>, State(state): State<AppState>) ->
             };
         })
         .fetch_all(&state.db)
-        .await.unwrap();
+        .await
+        .unwrap();
 
     return IndexTemplate {
         name: params.name.unwrap_or("None".to_string()),
