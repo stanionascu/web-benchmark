@@ -1,11 +1,4 @@
-# Result
-
-```
-$ gcc --version
-gcc (GCC) 12.2.1 20230201
-```
-
-## Build
+# Build
 ```
 mkdir build
 cd build/
@@ -13,11 +6,18 @@ cmake -DCMAKE_BUILD_TYPE=Release ../
 cmake --build .
 ```
 
-## Generating CSP
+# Generating CSP
 From the build folder:
 
 ```
 ./drogon/bin/drogon_ctl create view ../templates/IndexHtml.csp -o ../
+```
+
+# Result
+
+```
+$ gcc --version
+gcc (GCC) 12.2.1 20230201
 ```
 
 ```

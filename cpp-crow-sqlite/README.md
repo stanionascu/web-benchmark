@@ -1,16 +1,16 @@
-# Result
-
-```
-$ gcc --version
-gcc (GCC) 12.2.1 20230201
-```
-
-## Build
+# Build
 ```
 mkdir build
 cd build/
 cmake -DCMAKE_BUILD_TYPE=Release ../
 cmake --build .
+```
+
+# Result
+
+```
+$ gcc --version
+gcc (GCC) 12.2.1 20230201
 ```
 
 ```
