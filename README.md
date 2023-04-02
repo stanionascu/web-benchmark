@@ -22,14 +22,14 @@ All tests are running with Oha for 30 seconds, and 5000 connections:
 $ oha -z30s -c5000 http://machine:3000/?name=Oha
 ```
 
-| Implementation                 | Result                  | Throughput              | Relative Performance |
-| ------------------------------ | ----------------------- | ----------------------- | -------------------- |
-| (node-sveltekit-sqlite)        | (603.4693 rps)          | (9.02 MiB)              | (0.06x)              |
-| go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB                | 0.28x                |
-| rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              | 0.32x                |
-| python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              | 0.37x                |
-| node-fastify-handlebars-sqlite | 3842.0419 rps           | 6.59 MiB/s              | 0.38x                |
-| rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             | 1.0x                 |
+| Implementation                 | Result                  | Throughput              | Relative Performance | Latency p10/p50/p99 (sec)  |
+| ------------------------------ | ----------------------- | ----------------------- | -------------------- | -------------------------- |
+| (node-sveltekit-sqlite)        | (603.4693 rps)          | (9.02 MiB)              | (0.06x)              | 1.79/5.83/25.56 s          |
+| go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB                | 0.28x                | 0.06/0.59/11.96 s          |
+| rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              | 0.32x                | 1.47/1.53/2.29 s           |
+| python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              | 0.37x                | 0.58/1.22/2.36 s           |
+| node-fastify-handlebars-sqlite | 3842.0419 rps           | 6.59 MiB/s              | 0.38x                | 0.21/0.46/6.09 s           |
+| rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             | 1.0x                 | 0.06/0.09/3.63 s           |
 
 ## Current implementations:
 ### Rust: axum + sqlite via sqlx + askama
