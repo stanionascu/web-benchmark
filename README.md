@@ -24,8 +24,9 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 
 | Implementation                 | Result                  | Throughput              | Relative Performance | Latency p10/p50/p99 (sec)  |
 | ------------------------------ | ----------------------- | ----------------------- | -------------------- | -------------------------- |
-| (node-sveltekit-sqlite)        | (603.4693 rps)          | (9.02 MiB)              | (0.06x)              | 1.79/5.83/25.56 s          |
-| go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB                | 0.28x                | 0.06/0.59/11.96 s          |
+| (node-sveltekit-sqlite)        | (603.4693 rps)          | (9.02 MiB/s)            | (0.06x)              | 1.79/5.83/25.56 s          |
+| go-fiber-sqlite                | 2445.2853 rps           | 5.66 MiB/s              | 0.24x                | 0.08/0.74/12.83 s          |
+| go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB/s              | 0.28x                | 0.06/0.59/11.96 s          |
 | rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              | 0.32x                | 1.47/1.53/2.29 s           |
 | python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              | 0.37x                | 0.58/1.22/2.36 s           |
 | node-fastify-handlebars-sqlite | 3842.0419 rps           | 6.59 MiB/s              | 0.38x                | 0.21/0.46/6.09 s           |
@@ -70,6 +71,12 @@ node build/index.js
 cd node-fastify-handlebars-sqlite/
 npm install
 node app.js
+```
+
+### Go: go-fiber + sqlite3
+```
+cd go-fiber-sqlite/
+go run main.go
 ```
 
 # Creating the test SQLite database

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic web benchmark template</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+  </head>
+  <body>
+      <section id="tables">
+        <h2>Hi, {{name}}!</h2>
+        <figure>
+          <table role="grid">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Release Year</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each films}}
+              <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{ this.title }}</td>
+                <td>{{ this.releaseYear }}</td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </figure>
+      </section>
+  </body>
+</html>
