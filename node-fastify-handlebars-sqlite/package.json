@@ -1,0 +1,22 @@
+{
+  "name": "fastify-handlebars-sqlite",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/compress": "^6.2.1",
+    "fastify": "^4.0.0",
+    "fastify-plugin": "^3.0.0",
+    "handlebars": "^4.7.7",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "tap": "^16.1.0"
+  }
+}

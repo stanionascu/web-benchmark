@@ -28,6 +28,7 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 | go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB                | 0.28x                |
 | rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              | 0.32x                |
 | python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              | 0.37x                |
+| node-fastify-handlebars-sqlite | 3842.0419 rps           | 6.59 MiB/s              | 0.38x                |
 | rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             | 1.0x                 |
 
 ## Current implementations:
@@ -60,8 +61,15 @@ GIN_MODE=release go run main.go
 ```
 cd node-sveltekit-sqlite/
 npm install
-npm run buil
+npm run build
 node build/index.js
+```
+
+### Node: node + fastify + handlebars + sqlite3
+```
+cd node-fastify-handlebars-sqlite/
+npm install
+node app.js
 ```
 
 # Creating the test SQLite database
