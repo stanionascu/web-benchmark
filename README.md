@@ -24,6 +24,7 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 
 | Implementation                 | Result                  | Throughput              | Relative Performance |
 | ------------------------------ | ----------------------- | ----------------------- | -------------------- |
+| (node-sveltekit-sqlite)        | (603.4693 rps)          | (9.02 MiB)              | (0.06x)              |
 | go-gin-sqlite                  | 2820.5934 rps           | 4.78 MiB                | 0.28x                |
 | rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              | 0.32x                |
 | python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              | 0.37x                |
@@ -55,6 +56,13 @@ cd go-gin-sqlite/
 GIN_MODE=release go run main.go
 ```
 
+### Node: node + sveltekit + sqlite3
+```
+cd node-sveltekit-sqlite/
+npm install
+npm run buil
+node build/index.js
+```
 
 # Creating the test SQLite database
 
@@ -83,6 +91,6 @@ Client is connected to the server with a 1GBps connection via switch in a homela
 - [ ] - C++
 - [ ] - Bun
 - [ ] - Deno
-- [ ] - Node
+- [X] - Node
 - [X] - Python
 - [ ] - Common chart plotting all versions
