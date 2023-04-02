@@ -30,6 +30,7 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 | rust-axum-askama-sqlx          | 3227.3343 rps           | 5.52 MiB/s              | 0.32x                | 1.47/1.53/2.29 s           |
 | python-uvicorn-fastapi-sqlite  | 3810.3847 rps           | 6.48 MiB/s              | 0.37x                | 0.58/1.22/2.36 s           |
 | node-fastify-handlebars-sqlite | 3842.0419 rps           | 6.59 MiB/s              | 0.38x                | 0.21/0.46/6.09 s           |
+| cpp-crow-sqlite                | 6770.7954 rps           | 11.61 MiB/s             | 0.67x                | 0.63/0.66/0.85 s           |
 | rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             | 1.0x                 | 0.06/0.09/3.63 s           |
 
 ## Current implementations:
@@ -103,7 +104,7 @@ Client is connected to the server with a 1GBps connection via switch in a homela
 - [ ] - Add CPU/Memory usage plot per implementation
 - [X] - Rust
 - [X] - Golang
-- [ ] - C++
+- [X] - C++
 - [ ] - Bun
 - [ ] - Deno
 - [X] - Node
