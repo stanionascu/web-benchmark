@@ -32,6 +32,7 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 | node-fastify-handlebars-sqlite | 3842.0419 rps           | 6.59 MiB/s              | 0.38x                | 0.21/0.46/6.09 s           |
 | cpp-crow-sqlite                | 6770.7954 rps           | 11.61 MiB/s             | 0.67x                | 0.63/0.66/0.85 s           |
 | rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             | 1.0x                 | 0.06/0.09/3.63 s           |
+| cpp-drogon-sqlite              | 10745.5820 rps          | 18.55 MiB/s             | 1.07x                | 0.20/0.23/0.29 s           |
 
 ## Current implementations:
 ### Rust: axum + sqlite via sqlx + askama
