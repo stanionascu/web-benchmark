@@ -92,6 +92,17 @@ sqlite> .read db/sqlite-sakila-db/sqlite-sakila-insert-data.sql
 sqlite> .exit
 ```
 
+# Creating the test Postgres database (docker)
+
+```
+docker run --name db -p 5432:5432 -e POSTGRES_PASSWORD=<password> -d postgres
+psql -h localhost -U postgres
+psql> CREATE DATABASE sakila;
+psql> \c sakila;
+psql#sakila> \i db/postgres-sakila-insert-data.sql
+psql#sakila> \i db/postgres-sakila-schema.sql
+```
+
 # Test setup
 
 Client machine: Ryzen 5900X / RAM 32GB
