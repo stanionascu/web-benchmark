@@ -99,8 +99,8 @@ docker run --name db -p 5432:5432 -e POSTGRES_PASSWORD=<password> -d postgres
 psql -h localhost -U postgres
 psql> CREATE DATABASE sakila;
 psql> \c sakila;
-psql#sakila> \i db/postgres-sakila-insert-data.sql
-psql#sakila> \i db/postgres-sakila-schema.sql
+psql#sakila> \i db/postgres-sakila-db/postgres-sakila-schema.sql
+psql#sakila> \i db/postgres-sakila-db/postgres-sakila-insert-data.sql
 ```
 
 # Test setup
