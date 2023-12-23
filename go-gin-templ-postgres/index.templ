@@ -1,0 +1,41 @@
+
+package main
+
+import "strconv"
+
+templ index(name string, films []Film) {
+	<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Basic web benchmark template</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"></link>
+  </head>
+  <body>
+      <section id="tables">
+        <h2>Hi, { name }!</h2>
+        <figure>
+          <table role="grid">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Release Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              for index, film := range films {
+              <tr>
+                <th scope="row">{ strconv.Itoa(index) }</th>
+                <td>{ film.Title }</td>
+                <td>{ film.ReleaseYear }</td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </figure>
+      </section>
+  </body>
+</html>
+}

@@ -34,6 +34,7 @@ $ oha -z30s -c5000 http://machine:3000/?name=Oha
 | go-fiber-mustache-postgres     | 8374.6098 rps           | 19.44 MiB/s             | 0.83x                | 0.02/0.19/6.28 s           |
 | rust-axum-askama-rusqlite      | 10031.8862 rps          | 17.17 MiB/s             | 1.0x                 | 0.06/0.09/3.63 s           |
 | cpp-drogon-sqlite              | 10745.5820 rps          | 18.55 MiB/s             | 1.07x                | 0.20/0.23/0.29 s           |
+| go-gin-templ-postgres          | 11648.3316 rps          | 19.33 MiB/s             | 1.16x                | 0.02/0.13/4.97 s           |
 
 ## Current implementations:
 ### Rust: axum + sqlite via sqlx + askama
@@ -87,6 +88,17 @@ go run main.go
 cd go-fiber-postgres/
 go run main.go
 ```
+
+### Go: go-gin + templ + sqlx (postgres)
+
+**NOTE**: Templ needs a pregeneration step.
+
+```
+cd go-gin-templ-postgres/
+templ generate -f index.templ
+go run main.go index_templ.go
+```
+
 
 # Creating the test SQLite database
 
